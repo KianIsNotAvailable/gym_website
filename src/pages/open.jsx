@@ -2,7 +2,7 @@ import React from 'react'
 import './open.css'
 
 export default function Open() {
-    //make it loop undil its done every day or something idk - change the innerhtml to {with something in it to access the object.day.hours}
+
   return (
     <div>
         <table className='table'>
@@ -13,6 +13,30 @@ export default function Open() {
             <tr>
                 <td>Monday</td>
                 <td>6am - 10pm</td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td>6am - 10pm</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>6am - 10pm</td>
+            </tr>
+            <tr>
+                <td>Thursday</td>
+                <td>6am - 10pm</td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>6am - 10pm</td>
+            </tr>
+            <tr>
+                <td>Saturday</td>
+                <td>8am - 9pm</td>
+            </tr>
+            <tr>
+                <td>Sunday</td>
+                <td>8am - 9pm</td>
             </tr>
         </table>
     </div>
