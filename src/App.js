@@ -5,6 +5,7 @@ import { Navbar } from './components/Navbar';
 import  Open  from './pages/open';
 import Home from './pages/home';
 import Join from './pages/join';
+import Calculator from './pages/calculator';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path='/' element={ <Home/> }/>
           <Route path='/open' element={ <Open />}/>
           <Route  path='/join' element={ <Join />} />
+          <Route  path='/calorie' element={ <Calculator />} />
         </Routes>
       </Router>
     </div>

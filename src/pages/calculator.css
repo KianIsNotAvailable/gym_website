@@ -1,0 +1,7 @@
+.everything{
+    margin: auto;
+    width: 50%;
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+}
