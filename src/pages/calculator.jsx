@@ -20,19 +20,21 @@ function Calculator() {
     };
     const [weightInput, setWeightInput] = useState('');
     const handleWeightInput = (e)=>{
-        setWeightInput(Math.floor(e.target.value * 0.45359237))
+        setWeightInput(Math.floor(e.target.value))
     };
     const [height,setHeight]=useState('');
     const handleHeightSelect = (e) =>{
-        setHeight(Math.floor(e.target.value * 2.54))
+        setHeight(Math.floor(e.target.value))
     };
     const [Activity, setActivity] = useState('');
     const handleActivity = (e) =>{
         setActivity(e.target.value)
     };
     const [calories, setCalories] = useState('');
+    const [results, setResults] = useState(false);
     const handleCalculate = ()=>{
-        setCalories(Math.floor(((10 * weightInput) + (6.25 * height) - (5 * ageInput) + Gender) * Activity))
+        setCalories(Math.floor(((10 * (weightInput * 0.45359237)) + (6.25 * (height * 2.54)) - (5 * ageInput) + Gender) * Activity));
+        setResults(true);
     }
     
 
@@ -44,6 +46,7 @@ function Calculator() {
   <div >
     <h1 >Welcome to the Calorie Calculator</h1>
   </div>
+  
   <div className='everything'>
     <table >
         <tbody>
@@ -135,13 +138,49 @@ function Calculator() {
             <tr >
               <td></td>
               <td>
-                <a href="#Results"><button  id="calculate" onClick={handleCalculate}>Calculate!</button></a>
+                <a href=""><button  id="calculate" onClick={handleCalculate}>Calculate!</button></a>
               </td>
             </tr>
         </tbody>
     </table>
   </div>
+
 </section>
+{results ? <div>
+  <button>Cut</button>
+  <button>Maintain</button>
+  <button>Bulk</button>
+  <div id='maintain'>
+  <div>
+    <h1>Daily Calories</h1>
+    <p>Your Daily Calorie intake should be {calories}</p>
+  </div>
+  <div>
+  <h1>Weekly Calories</h1>
+    <p>Your Weekly Calorie intake should be {calories}</p>
+  </div>
+  </div>
+  <div id='cut'>
+  <div>
+    <h1>Daily Calories</h1>
+    <p>Your Daily Calorie intake should be {calories - 500}</p>
+  </div>
+  <div>
+  <h1>Weekly Calories</h1>
+    <p>Your Weekly Calorie intake should be {calories - 3500}</p>
+  </div>
+  </div>
+  <div id='bulk'>
+  <div>
+    <h1>Daily Calories</h1>
+    <p>Your Daily Calorie intake should be {calories + 500}</p>
+  </div>
+  <div>
+  <h1>Weekly Calories</h1>
+    <p>Your Weekly Calorie intake should be {calories + 3500}</p>
+  </div>
+  </div>
+</div> : <div></div>  }
     </div>
   )
 }
