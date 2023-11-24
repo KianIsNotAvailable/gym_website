@@ -7,7 +7,7 @@ export const Join = () => {
     const changeAuthMode = () => {
       setAuthMode(authMode === "signin" ? "signup" : "signin")
     };
-
+//
   return (
     <div>
         <table>
